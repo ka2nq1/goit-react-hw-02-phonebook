@@ -1,9 +1,16 @@
 import React from 'react';
 import ContactListItem from '../contactListItem/ContactListItem';
+import styles from './ContactList.module.css';
 
-function ContactList() {
+function ContactList({contacts, onRemoveContact}) {
     return (
-        <ul></ul>
+        <div className={styles.container}>
+            {contacts.length > 0 &&
+                <ul className={styles.list}>
+                <ContactListItem contacts={contacts} onRemoveContact={onRemoveContact}/>
+                </ul>
+            }
+        </div>
     )
 }
 
